@@ -1,5 +1,4 @@
 #include "main.h"
-#define MAX_INPUT_LENGTH 150
 /**
  * main - The main function to read use input
  * Return: 0 on success
