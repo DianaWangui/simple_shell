@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
 					printf("Child process %d exited with status %d\n", child_pid, WEXITSTATUS(status));
 				}
 			}
-			input_command = strtok(line, delimiter);
+			input_command = strtok(NULL, delimiter);
 		}
 		return (0);
 	}
