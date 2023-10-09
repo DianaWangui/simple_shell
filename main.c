@@ -66,6 +66,8 @@ int main(int argc, char *argv[])
 			}
 			input_command = strtok(NULL, delimiter);
 		}
-		return (0);
+		write(1, "Simple_shell$ ", 14);
 	}
+	free(line);
+	return (0);
 }
