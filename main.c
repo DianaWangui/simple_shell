@@ -3,7 +3,7 @@
  * main - The main function to read use input
  * Return: 0 on success
  */
-int main(void)
+int main(int argc, char *argv[])
 {
 	int char_read;
 
@@ -41,14 +41,14 @@ int main(void)
 			}
 			else if (child_pid == 0) /* child process */
 			{
-				char *path_command(input_path); /* call the path function */
-				if (path_command == NULL)
+				char *path = get_path_check(input_command, argv); /* call the path function */
+				if (input_command == NULL)
 				{
 					perror("command not found");
 					exit(1);
 				}
-				execve(path_command, &input_command, __environ);
-				if (execve(path_command, &input_command, __environ) == -1)
+				execve(path, argv, __environ);
+				if (execve(input_command, &input_command, __environ) == -1)
 				{
 					perror("failed to execute command");
 					exit(EXIT_FAILURE);
@@ -58,10 +58,10 @@ int main(void)
 			{
 				int status;
 
-				waitpid(child_pid, &status. 0);
-				if (WIFEXITED(status) && WEXISTATUS(status) != 0)
+				waitpid(child_pid, &status, 0);
+				if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
 				{
-					printf("Child process %d exited with status %d\n", child_pid, WEXISTATUS(status));
+					printf("Child process %d exited with status %d\n", child_pid, WEXITSTATUS(status));
 				}
 			}
 			input_command = strtok(line, delimiter);
