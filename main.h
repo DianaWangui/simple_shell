@@ -9,5 +9,6 @@
 #include <string.h>
 
 void exec_command(const char *command);
+char *get_path_check(char *command);
 
 #endif /* MAIN_H */
