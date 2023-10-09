@@ -47,6 +47,7 @@ int main(int argc, char *argv[])
 					perror("command not found");
 					exit(1);
 				}
+				printf("The path is %s\n", path);
 				execve(path, argv, __environ);
 				if (execve(input_command, &input_command, __environ) == -1)
 				{
