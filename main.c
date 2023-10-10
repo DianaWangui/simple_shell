@@ -3,7 +3,7 @@
  * main - The main function to read use input
  * Return: 0 on success
  */
-int main(int argc, char *argv[])
+int main(__attribute__((unused)) int argc, char *argv[])
 {
 	int char_read;
 
@@ -42,18 +42,15 @@ int main(int argc, char *argv[])
 			else if (child_pid == 0) /* child process */
 			{
 				char *path = get_path_check(input_command, argv); /* call the path function */
-				if (input_command == NULL)
+				if (path == NULL)
 				{
 					perror("command not found");
 					exit(1);
 				}
 				printf("The path is %s\n", path);
 				execve(path, argv, __environ);
-				if (execve(input_command, &input_command, __environ) == -1)
-				{
-					perror("failed to execute command");
-					exit(EXIT_FAILURE);
-				}
+				perror("failed to execute command");
+				exit(EXIT_FAILURE);
 			}
 			else if (child_pid > 0)
 			{
