@@ -16,12 +16,8 @@ int main(void)
 
 	while(1)
 	{
-		/* printf(YEsss);*/
 		write(1, "MyShell$ ", 10);
 		char_read = getline(&line, &len, stdin);
-		printf("checking input character\n");
-		printf("You entered the command: %s\n", line);
-		printf("charactes read are:  %d\n", char_read);
 		if (char_read == -1)
 		{
 			/* Handle the CTRL + D */
@@ -44,7 +40,6 @@ int main(void)
 		}
 		else
 		{
-			printf("am still here");
 			tokenization(line);
 			/*free(line);*/
 		}
