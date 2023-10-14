@@ -9,7 +9,7 @@ int main(void)
 
 	size_t len = 0;
 
-	char *token;
+	/*char *token; */
 
 	char *line;
 
