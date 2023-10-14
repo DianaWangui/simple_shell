@@ -43,7 +43,7 @@ int main(void)
 		}
 		else
 		{
-			tokenization(token);
+			tokenization(command_arguments);
 		}
 		/*Our loops ends here */
 	}
