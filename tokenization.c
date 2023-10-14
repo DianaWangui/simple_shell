@@ -4,6 +4,13 @@
  */
 int tokenization(char *token)
 {
+	char *line = NULL;
+
+	char *delimiter = " \n";
+
+	char *command_arguments[1024];
+
+	int _index = 0;
 	/* Tokenizing our string input */
 	token = strtok(line, delimiters);
 	while(token != NULL)

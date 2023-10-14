@@ -17,8 +17,6 @@ int main(__attribute__((unused)) int argc, char *argv[])
 
 	char *command_arguments[1024];
 
-	int pid;
-
 	int _index = 0;
 
 	while(1)

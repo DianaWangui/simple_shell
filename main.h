@@ -10,8 +10,13 @@
 
 void exec_command(const char *command);
 char *get_path_check(const char *__path, char *const argv[]);
+extern char ** environ;
+extern char *token;
+extern char *line;
+extern char *delimiters;
+extern char *command_arguments;
 
-/*Builtin prototypes */
+/* Builtin prototypees */
 
 void exit_builtin(void);
 void cd_builtin(char *arg);
