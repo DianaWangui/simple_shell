@@ -44,6 +44,7 @@ int main(void)
 		}
 		else
 		{
+			printf("am still here");
 			tokenization(line);
 			free(line);
 		}
