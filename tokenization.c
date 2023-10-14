@@ -8,7 +8,7 @@ int tokenization(char *token)
 
 	char *delimiters = " \n";
 
-	char *command_arguments[10000];
+	char *command_arguments[2040];
 
 	int _index = 0;
 	/* Tokenizing our string input */
@@ -19,6 +19,7 @@ int tokenization(char *token)
 		token = strtok(NULL, delimiters);
 		_index++;
 	}
+	
 	command_arguments[_index] = NULL;
 	/*Checking if command is builtin command */
 	if (strcmp(command_arguments[0], "cd") == 0)
@@ -73,5 +74,6 @@ int _pid(void)
 		int status;
 		waitpid(pid, &status, 0);
 	}
+	free(line);
 	return (0);
 }
