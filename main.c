@@ -24,10 +24,10 @@ int main(void)
 		printf("charactes read are:  %d\n", char_read);
 		if (char_read == -1)
 		{
-			printf("If character is null\n");
 			/* Handle the CTRL + D */
 			if (feof(stdin))
 			{
+				printf("You just pressed ctrl d\n");
 				/*include builtin exit comman */
 				exit_builtin();
 			}
