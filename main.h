@@ -23,6 +23,6 @@ void cd_builtin(char *arg);
 /*other helping functions */
 
 int tokenization(char *token);
-int _pid(void);
+void _pid(void);
 void error_message(char *command);
 #endif /* MAIN_H */

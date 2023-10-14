@@ -39,7 +39,7 @@ int tokenization(char *token)
 /**
  * _pid - a function that starts a new program, child program
  */
-int _pid(void)
+void _pid(void)
 {
 	size_t pid;
 
