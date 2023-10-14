@@ -11,7 +11,7 @@ int main(void)
 
 	char *token;
 
-	char *line = NULL;
+	char *line;
 
 
 	while(1)
