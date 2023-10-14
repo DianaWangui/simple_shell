@@ -53,6 +53,7 @@ int _pid(void)
 		{
 			execve(path_command, command_arguments, environ);
 			/* error message fucntion here */
+			error_message(command_arguments[0]);
 			free(line);
 			exit(1);
 		}
