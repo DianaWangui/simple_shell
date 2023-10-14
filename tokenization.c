@@ -45,7 +45,7 @@ int _pid(void)
 
 	char *line;
 
-	size_t pid;
+	int pid;
 
 	pid = fork();
 	if(pid == -1)
