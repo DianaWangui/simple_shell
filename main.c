@@ -19,8 +19,10 @@ int main(void)
 		printf("YEsss");
 		write(1, "MyShell$ ", 9);
 		char_read = getline(&line, &len, stdin);
+		printf("checking input character");
 		if (char_read == -1)
 		{
+			printf("If character is null");
 			/* Handle the CTRL + D */
 			if (feof(stdin))
 			{
