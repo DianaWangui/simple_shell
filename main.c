@@ -9,7 +9,7 @@ int main(void)
 
 	size_t len = 0;
 
-	char *token;
+	char token;
 
 	char *line = NULL;
 
@@ -43,7 +43,7 @@ int main(void)
 		}
 		else
 		{
-			tokenization(command_arguments);
+			tokenization();
 		}
 		/*Our loops ends here */
 	}
