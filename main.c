@@ -46,7 +46,7 @@ int main(void)
 		{
 			printf("am still here");
 			tokenization(line);
-			free(line);
+			/*free(line);*/
 		}
 		/*Our loops ends here */
 	}
