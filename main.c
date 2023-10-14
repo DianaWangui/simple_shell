@@ -17,7 +17,7 @@ int main(void)
 	while(1)
 	{
 		/* printf(YEsss);*/
-		write(1, "MyShell$ ", 9);
+		write(1, "MyShell$ ", 10);
 		char_read = getline(&line, &len, stdin);
 		printf("checking input character\n");
 		if (char_read == -1)
