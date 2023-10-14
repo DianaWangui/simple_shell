@@ -37,7 +37,7 @@ int main(void)
 				exit(-1);
 			}
 		}
-		else if (character_read == 1)
+		else if (char_read == 1)
 		{
 			continue;
 		}

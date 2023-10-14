@@ -14,13 +14,13 @@ char *get_path_check(const char *command)
 	/* this loops through and concatemate the paths */
 	while(directory != NULL)
 	{
-		strcpy(command_path, dir);
+		strcpy(command_path, directory);
 		if (command_path[strlen(command_path)- 1] != '/')
 		{
 			strcat(command_path, "/");
 		}
 		strcat(command_path, command);
-		if (access(command_path, F_OK) == 0 && access(command_path, X-OK) == 0)
+		if (access(command_path, F_OK) == 0 && access(command_path, X_OK) == 0)
 		{
 			free(path_copy);
 			return(strdup(command_path));
