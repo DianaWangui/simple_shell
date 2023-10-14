@@ -35,6 +35,7 @@ int tokenization(char *token)
 	{
 		_pid();
 	}
+	return (0);
 }
 /**
  * _pid - a function that starts a new program, child program
@@ -71,4 +72,5 @@ int _pid(void)
 		int status;
 		waitpid(pid, &status, 0);
 	}
+	return (0);
 }
