@@ -20,8 +20,8 @@ int main(void)
 		write(1, "MyShell$ ", 10);
 		char_read = getline(&line, &len, stdin);
 		printf("checking input character\n");
-		printf("%s\n", line);
-		printf("%d\n", char_read);
+		printf("You entered the command: %s\n", line);
+		printf("charactes read are:  %d\n", char_read);
 		if (char_read == -1)
 		{
 			printf("If character is null\n");
