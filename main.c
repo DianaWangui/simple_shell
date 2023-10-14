@@ -3,7 +3,7 @@
  * main - The main function to read use input
  * Return: 0 on success
  */
-int main(__attribute__((unused)) int argc, char *argv[])
+int main(void)
 {
 	int char_read;
 
@@ -29,12 +29,12 @@ int main(__attribute__((unused)) int argc, char *argv[])
 			if (feof(stdin))
 			{
 				/*include builtin exit comman */
-				exit_builtin()
+				exit_builtin();
 			}
 			else
 			{
 				perror("Error reading input\n");
-				exit(-1)
+				exit(-1);
 			}
 		}
 		else if (character_read == 1)
