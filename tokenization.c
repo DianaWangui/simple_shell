@@ -59,9 +59,9 @@ int _pid(void)
 		free(line);
 		return(-1);
 	}
-	printf("This is a child process\n");
 	else if (pid == 0)
 	{
+		printf("this is a child process");
 		char *path_command = get_path_check(command_arguments[0]);
 		if (path_command != NULL)
 		{
