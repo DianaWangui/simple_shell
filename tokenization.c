@@ -48,7 +48,7 @@ int _pid(void)
 	}
 	else if (pid == 0)
 	{
-		char *path_command = get_path_check(command_ arguments[0]);
+		char *path_command = get_path_check(command_arguments[0]);
 		if (path_command != NULL)
 		{
 			execve(path_command, command_arguments, environ);
