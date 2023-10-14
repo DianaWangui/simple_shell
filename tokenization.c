@@ -45,7 +45,7 @@ int _pid(void)
 {
 	char *command_arguments[1024];
 
-	char *line;
+	char *line = NULL;
 
 	int pid;
 
