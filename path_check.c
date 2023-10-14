@@ -4,7 +4,7 @@
  * @command: The command to be checked in the path
  * Return: NULL
 */
-char *get_path_check(const char *command)
+char *get_path_check(char *command)
 {
 	char *path = getenv("PATH");
 	char *copy_path = strdup(path);
@@ -25,10 +25,10 @@ char *get_path_check(const char *command)
 			free(path_copy);
 			return(strdup(command_path));
 		}
-		dir = strtok(NULL, ":");
+		directory = strtok(NULL, ":");
 	}
 	/*printf('File not found');*/
-	free(path_copy);
+	free(copy_path);
 	/* Returns the command if there was no execuatble path found */
 	return (command);
 }
