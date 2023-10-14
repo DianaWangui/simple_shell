@@ -16,7 +16,7 @@ int main(void)
 
 	while(1)
 	{
-		write(1, "MyShell$ ", 10);
+		write(1, "MyShell$ ", 9);
 		char_read = getline(&line, &len, stdin);
 		if (char_read == -1)
 		{
@@ -39,7 +39,7 @@ int main(void)
 		}
 		else
 		{
-			tokenization(&token);
+			tokenization(line);
 			free(line);
 		}
 		/*Our loops ends here */
