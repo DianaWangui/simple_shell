@@ -51,6 +51,8 @@ int _pid(void)
 
 	int pid;
 
+	char *path_command;
+
 	pid = fork();
 	printf("this is a fork\n");
 	if(pid == -1)
@@ -62,7 +64,7 @@ int _pid(void)
 	else if (pid == 0)
 	{
 		printf("this is a child process");
-		char *path_command = get_path_check(command_arguments[0]);
+		path_command = get_path_check(command_arguments[0]);
 		if (path_command != NULL)
 		{
 			execve(path_command, command_arguments, environ);
