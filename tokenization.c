@@ -52,12 +52,14 @@ int _pid(void)
 	int pid;
 
 	pid = fork();
+	printf("this is a fork\n");
 	if(pid == -1)
 	{
 		perror("Forking Failed");
 		free(line);
 		return(-1);
 	}
+	printf("This is a child process\n");
 	else if (pid == 0)
 	{
 		char *path_command = get_path_check(command_arguments[0]);
