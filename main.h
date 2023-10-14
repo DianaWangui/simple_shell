@@ -9,11 +9,11 @@
 #include <string.h>
 
 char *get_path_check(char *command);
-extern char ** environ;
+extern char **environ;
 extern char *token;
 extern char *line;
 extern char *delimiters;
-extern char *command_arguments;
+extern char *command_arguments[];
 
 /* Builtin prototypees */
 

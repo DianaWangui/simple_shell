@@ -41,6 +41,8 @@ int tokenization(char *token)
  */
 int _pid(void)
 {
+	char *command_arguments[1024];
+
 	size_t pid;
 
 	pid = fork();
