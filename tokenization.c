@@ -8,7 +8,7 @@ int tokenization(char *token)
 
 	char *delimiters = " \n";
 
-	char *command_arguments[1024];
+	char *command_arguments[10000];
 
 	int _index = 0;
 	/* Tokenizing our string input */
