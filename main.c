@@ -13,11 +13,6 @@ int main(void)
 
 	char *line = NULL;
 
-	char *delimiter = " \n";
-
-	char *command_arguments[1024];
-
-	int _index = 0;
 
 	while(1)
 	{
@@ -43,7 +38,7 @@ int main(void)
 		}
 		else
 		{
-			tokenization();
+			tokenization(token);
 		}
 		/*Our loops ends here */
 	}

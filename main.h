@@ -8,7 +8,6 @@
 #include <sys/types.h>
 #include <string.h>
 
-void exec_command(const char *command);
 char *get_path_check(char *command);
 extern char ** environ;
 extern char *token;
