@@ -2,9 +2,9 @@
 /**
  * tokenization - A function that tokezes the path
  */
-int tokenization(char *token)
+int tokenization(char *line)
 {
-	char *line = NULL;
+	/* char *line = NULL;*/
 
 	char *delimiters = " \n";
 
