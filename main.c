@@ -16,6 +16,7 @@ int main(void)
 
 	while(1)
 	{
+		printf("YEsss");
 		write(1, "MyShell$ ", 9);
 		char_read = getline(&line, &len, stdin);
 		if (char_read == -1)
