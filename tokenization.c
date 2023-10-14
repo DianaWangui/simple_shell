@@ -4,7 +4,7 @@
  */
 int tokenization(char *token)
 {
-	char *line;
+	char *line = NULL;
 
 	char *delimiters = " \n";
 
@@ -35,6 +35,7 @@ int tokenization(char *token)
 	{
 		_pid();
 	}
+	free(line);
 	return (0);
 }
 /**
