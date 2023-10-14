@@ -62,7 +62,7 @@ int _pid(void)
 	}
 	else if (pid == 0)
 	{
-		printf("this is a child process");
+		printf("this is a child process\n");
 		path_command = get_path_check(command_arguments[0]);
 		if (path_command != NULL)
 		{
@@ -75,7 +75,7 @@ int _pid(void)
 	}
 	else
 	{
-		printf("This is a parent process");
+		printf("This is a parent process\n");
 		waitpid(pid, &status, 0);
 	}
 	/*free(line);*/
