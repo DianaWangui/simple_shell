@@ -4,6 +4,7 @@
  */
 int tokenization(char *line)
 {
+	char *token;
 	/* char *line = NULL;*/
 
 	char *delimiters = " \n";
