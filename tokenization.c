@@ -50,6 +50,8 @@ int _pid(void)
 
 	char *path_command;
 
+	int status;
+
 	pid = fork();
 	printf("this is a fork\n");
 	if(pid == -1)
@@ -74,7 +76,6 @@ int _pid(void)
 	else
 	{
 		printf("This is a parent process");
-		int status;
 		waitpid(pid, &status, 0);
 	}
 	/*free(line);*/
