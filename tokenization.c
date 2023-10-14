@@ -37,7 +37,7 @@ int tokenization(char *line)
 	{
 		_pid();
 	}
-	free(line);
+	/* free(line);*/
 	return (0);
 }
 /**
@@ -75,6 +75,6 @@ int _pid(void)
 		int status;
 		waitpid(pid, &status, 0);
 	}
-	free(line);
+	/*free(line);*/
 	return (0);
 }
