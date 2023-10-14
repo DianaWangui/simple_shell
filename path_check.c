@@ -22,7 +22,7 @@ char *get_path_check(char *command)
 		strcat(command_path, command);
 		if (access(command_path, F_OK) == 0 && access(command_path, X_OK) == 0)
 		{
-			free(path_copy);
+			free(copy_path);
 			return(strdup(command_path));
 		}
 		directory = strtok(NULL, ":");

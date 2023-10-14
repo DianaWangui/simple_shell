@@ -44,7 +44,7 @@ int _pid(void)
 	{
 		perror("Forking Failed");
 		free(line);
-		return(-1)
+		return(-1);
 	}
 	else if (pid == 0)
 	{
