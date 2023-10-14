@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	int char_read;
+	ssize_t char_read;
 
 	size_t len = 0;
 
