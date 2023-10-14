@@ -16,9 +16,8 @@ int main(void)
 
 	while(1)
 	{
-		write(1, "MyShell$ ", 9);
+		write(1, "MyShell$ ", 10);
 		char_read = getline(&line, &len, stdin);
-		printf("testing fault");
 		if (char_read == -1)
 		{
 			/* Handle the CTRL + D */
