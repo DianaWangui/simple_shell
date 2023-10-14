@@ -44,10 +44,6 @@ int main(void)
 		else
 		{
 			tokenization(token);
-			else
-			{
-				_pid();
-			}
 		}
 		/*Our loops ends here */
 	}

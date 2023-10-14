@@ -31,6 +31,10 @@ int tokenization(char *token)
 		/* Call the exit builtin function */
 		exit_builtin();
 	}
+	else
+	{
+		_pid();
+	}
 }
 /**
  * _pid - a function that starts a new program, child program
