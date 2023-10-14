@@ -29,7 +29,7 @@ int main(void)
 			else
 			{
 				perror("Error reading input\n");
-				free(line)
+				free(line);
 				exit(-1);
 			}
 		}
