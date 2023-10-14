@@ -12,7 +12,6 @@ int tokenization(char *line)
 	char *command_arguments[2040];
 
 	int _index = 0;
-	printf("About to tokenize");
 	/* Tokenizing our string input */
 	token = strtok(line, delimiters);
 	while(token != NULL)
