@@ -73,6 +73,7 @@ int _pid(void)
 	}
 	else
 	{
+		printf("This is a parent process");
 		int status;
 		waitpid(pid, &status, 0);
 	}
