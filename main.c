@@ -21,6 +21,7 @@ int main(void)
 		char_read = getline(&line, &len, stdin);
 		printf("checking input character\n");
 		printf("%s\n", line);
+		printf("%d\n", char_read);
 		if (char_read == -1)
 		{
 			printf("If character is null\n");
