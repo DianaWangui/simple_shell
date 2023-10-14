@@ -11,7 +11,7 @@ int main(void)
 
 	/*char *token; */
 
-	char *line[1024];
+	char line[1024];
 
 
 	while(1)
