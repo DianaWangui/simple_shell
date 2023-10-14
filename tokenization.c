@@ -4,7 +4,7 @@
  */
 int tokenization(char *token)
 {
-	char *line = NULL;
+	char *line;
 
 	char *delimiters = " \n";
 
@@ -43,7 +43,7 @@ int _pid(void)
 {
 	char *command_arguments[1024];
 
-	char *line = NULL;
+	char *line;
 
 	size_t pid;
 
