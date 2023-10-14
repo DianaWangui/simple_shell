@@ -29,6 +29,7 @@ int main(void)
 			else
 			{
 				perror("Error reading input\n");
+				free(line)
 				exit(-1);
 			}
 		}
@@ -39,6 +40,7 @@ int main(void)
 		else
 		{
 			tokenization(&token);
+			free(line);
 		}
 		/*Our loops ends here */
 	}
