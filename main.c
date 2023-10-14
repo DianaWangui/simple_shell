@@ -22,7 +22,7 @@ int main(void)
 		/* printf('checking input character');*/
 		if (char_read == -1)
 		{
-			/*printf("If character is null");
+			printf("If character is null");
 			/* Handle the CTRL + D */
 			if (feof(stdin))
 			{
