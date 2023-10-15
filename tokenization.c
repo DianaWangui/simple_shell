@@ -63,6 +63,7 @@ int _pid(void)
 	{
 		printf("this is a child process\n");
 		path_command = get_path_check(command_arguments[0]);
+		printf("This is the path, %s\n", path_command);
 		if (path_command != NULL)
 		{
 			execve(path_command, command_arguments, environ);
