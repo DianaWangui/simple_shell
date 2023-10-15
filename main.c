@@ -40,7 +40,7 @@ int main(void)
 		}
 		else
 		{
-			tokenization(line, command_arguments);
+			tokenization(line);
 			/*free(line);*/
 		}
 		/*Our loops ends here */

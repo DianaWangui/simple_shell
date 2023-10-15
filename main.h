@@ -21,7 +21,7 @@ void exit_builtin(void);
 void cd_builtin(char *arg);
 /*other helping functions */
 
-int tokenization(char *line, *command_arguments);
-int _pid(char *command_arguments);
+int tokenization(char *line);
+int _pid();
 void error_message(char *command);
 #endif /* MAIN_H */

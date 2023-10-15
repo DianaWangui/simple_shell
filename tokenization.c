@@ -2,7 +2,7 @@
 /**
  * tokenization - A function that tokezes the path
  */
-int tokenization(char *line, char *command_arguments[])
+int tokenization(char *line)
 {
 	char *token;
 	/* char *line = NULL;*/
@@ -35,7 +35,7 @@ int tokenization(char *line, char *command_arguments[])
 	}
 	else
 	{
-		_pid(command_arguments);
+		_pid();
 	}
 	/* free(line);*/
 	return (0);
@@ -43,7 +43,7 @@ int tokenization(char *line, char *command_arguments[])
 /**
  * _pid - a function that starts a new program, child program
  */
-int _pid(char *command_arguments[])
+int _pid(void)
 {
 	char *command_arguments[1024];
 
