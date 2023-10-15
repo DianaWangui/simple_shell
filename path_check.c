@@ -18,13 +18,13 @@ char *get_path_check(char *command)
 	/* this loops through and concatemate the paths */
 	while(directory != NULL)
 	{
-		/* strcpy(command_path, directory);
+		strcpy(command_path, directory);
 		if (command_path[strlen(command_path)- 1] != '/')
 		{
 			strcat(command_path, "/");
 		}
-		strcat(command_path, command);*/
-		snprintf(command_path, sizeof(command_path), "%s/%s", directory, command);
+		strcat(command_path, command);
+		/* snprintf(command_path, sizeof(command_path), %s/%s, directory, command);*/
 		if (access(command_path, F_OK) == 0 && access(command_path, X_OK) == 0)
 		{
 			free(copy_path);
