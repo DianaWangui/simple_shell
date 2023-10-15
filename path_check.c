@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * get_path_check - a function that checks for the path
+ * get_path_check - a function to check for the path
  * @command: The command to be checked in the path
  * Return: NULL
 */
