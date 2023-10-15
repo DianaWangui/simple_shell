@@ -64,12 +64,10 @@ int _pid(char *command_arguments[])
 	}
 	else if (pid == 0)
 	{
-		printf("this is a child process\n");
 		path_command = get_path_check(command_arguments[0]);
 		printf("This is the path");
 		if (path_command != NULL)
 		{
-			printf("Not null path");
 			execve(path_command, command_arguments, environ);
 			/* error message fucntion here */
 			error_message(command_arguments[0]);
@@ -79,7 +77,6 @@ int _pid(char *command_arguments[])
 	}
 	else
 	{
-		printf("This is a parent process\n");
 		waitpid(pid, &status, 0);
 	}
 	/*free(line);*/

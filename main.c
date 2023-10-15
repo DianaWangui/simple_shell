@@ -23,8 +23,7 @@ int main(void)
 			/* Handle the CTRL + D */
 			if (feof(stdin))
 			{
-				printf("You just pressed ctrl d\n");
-				/*include builtin exit comman */
+				/*include builtin exit command */
 				exit_builtin();
 			}
 			else
