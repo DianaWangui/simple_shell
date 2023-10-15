@@ -10,6 +10,7 @@ char *get_path_check(char *command)
 	char *copy_path = strdup(path);
 	char command_path[1024];
 	char *directory = strtok(copy_path, ":");
+	printf("This is a path code");
 
 	/* this loops through and concatemate the paths */
 	while(directory != NULL)
