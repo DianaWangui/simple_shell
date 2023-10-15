@@ -33,7 +33,10 @@ int tokenization(char *line)
 		/* Call the exit builtin function */
 		exit_builtin();
 	}
-	_pid();
+	else
+	{
+		_pid();
+	}
 	/* free(line);*/
 	return (0);
 }
