@@ -66,6 +66,7 @@ int _pid(void)
 		printf("This is the path");
 		if (path_command != NULL)
 		{
+			printf("Not null path");
 			execve(path_command, command_arguments, environ);
 			/* error message fucntion here */
 			error_message(command_arguments[0]);
