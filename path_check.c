@@ -10,15 +10,10 @@ char *get_path_check(char *command)
 	char *copy_path = strdup(path);
 	char command_path[1024];
 	char *directory = strtok(copy_path, ":");
-	/* if (path == NULL || command == NULL)
-	{
-		return (NULL);
-	} */
-	/* this loops through and concatemate the paths */
-	while(directory != NULL)
+	while (directory != NULL)
 	{
 		strcpy(command_path, directory);
-		if (command_path[strlen(command_path)- 1] != '/')
+		if (command_path[strlen(command_path) - 1] != '/')
 		{
 			strcat(command_path, "/");
 		}

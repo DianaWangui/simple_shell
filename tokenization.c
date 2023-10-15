@@ -1,6 +1,8 @@
 #include "main.h"
 /**
  * tokenization - A function that tokezes the path
+ * @line: The line containing the user input
+ * Return: 0 success
  */
 int tokenization(char *line)
 {
@@ -14,13 +16,12 @@ int tokenization(char *line)
 	int _index = 0;
 	/* Tokenizing our string input */
 	token = strtok(line, delimiters);
-	while(token != NULL)
+	while (token != NULL)
 	{
 		command_arguments[_index] = token;
 		token = strtok(NULL, delimiters);
 		_index++;
 	}
-	
 	command_arguments[_index] = NULL;
 	/*Checking if command is builtin command */
 	if (strcmp(command_arguments[0], "cd") == 0)
@@ -42,6 +43,8 @@ int tokenization(char *line)
 }
 /**
  * _pid - a function that starts a new program, child program
+ * @command_arguments: The command argument passed as input
+ * Return: 0 success
  */
 int _pid(char *command_arguments[])
 {
@@ -56,11 +59,11 @@ int _pid(char *command_arguments[])
 	int status;
 
 	pid = fork();
-	if(pid == -1)
+	if (pid == -1)
 	{
 		perror("Forking Failed");
 		free(line);
-		return(-1);
+		return (-1);
 	}
 	else if (pid == 0)
 	{

@@ -1,5 +1,6 @@
 #include "main.h"
-/* exit_builtin - a fucntion to exit shell
+/**
+ * exit_builtin - a fucntion to exit shell
  * exits with 0 status for success exit
  */
 void exit_builtin(void)
@@ -9,7 +10,8 @@ void exit_builtin(void)
 	sleep(1.5);
 	exit(0);
 }
-/* cd_builtin - A function for changing directory
+/**
+ * cd_builtin - A function for changing directory
  * @arg: The argument passed to the cd
  */
 void cd_builtin(char *arg)
