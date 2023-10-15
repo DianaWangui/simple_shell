@@ -9,7 +9,7 @@ int tokenization(char *line)
 
 	char *delimiters = " \n";
 
-	char *command_arguments[2040];
+	char *command_arguments[1024];
 
 	int _index = 0;
 	/* Tokenizing our string input */
@@ -35,7 +35,7 @@ int tokenization(char *line)
 	}
 	else
 	{
-		_pid();
+		_pid(command_arguments);
 	}
 	/* free(line);*/
 	return (0);
@@ -43,9 +43,9 @@ int tokenization(char *line)
 /**
  * _pid - a function that starts a new program, child program
  */
-int _pid(void)
+int _pid(char *command_arguments[])
 {
-	char *command_arguments[1024];
+	/*char *command_arguments[1024];*/
 
 	char *line = NULL;
 
