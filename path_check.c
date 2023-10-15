@@ -14,7 +14,7 @@ char *get_path_check(char *command)
 	{
 		return (NULL);
 	}
-
+	printf("Checking if we get herr");
 	/* this loops through and concatemate the paths */
 	while(directory != NULL)
 	{
@@ -35,5 +35,5 @@ char *get_path_check(char *command)
 	/*printf('File not found');*/
 	free(copy_path);
 	/* Returns the command if there was no execuatble path found */
-	return (NULL);
+	return (command);
 }
