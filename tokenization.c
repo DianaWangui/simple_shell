@@ -53,7 +53,6 @@ int _pid(void)
 	int status;
 
 	pid = fork();
-	printf("this is a fork\n");
 	if(pid == -1)
 	{
 		perror("Forking Failed");
