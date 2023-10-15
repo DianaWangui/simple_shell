@@ -10,26 +10,30 @@ char *get_path_check(char *command)
 	char *copy_path = strdup(path);
 	char command_path[1024];
 	char *directory = strtok(copy_path, ":");
-	printf("This is a path code");
+	if (path == NULL || command == NULL)
+	{
+		return (NULL);
+	}
 
 	/* this loops through and concatemate the paths */
 	while(directory != NULL)
 	{
-		strcpy(command_path, directory);
+		/* strcpy(command_path, directory);
 		if (command_path[strlen(command_path)- 1] != '/')
 		{
 			strcat(command_path, "/");
 		}
-		strcat(command_path, command);
+		strcat(command_path, command);*/
+		snprintf(command_path, sizeof(command_path), "%s/%s", directory, command);
 		if (access(command_path, F_OK) == 0 && access(command_path, X_OK) == 0)
 		{
 			free(copy_path);
-			return(strdup(command_path));
+			return (strdup(command_path));
 		}
 		directory = strtok(NULL, ":");
 	}
 	/*printf('File not found');*/
 	free(copy_path);
 	/* Returns the command if there was no execuatble path found */
-	return (command);
+	return (NULL);
 }
