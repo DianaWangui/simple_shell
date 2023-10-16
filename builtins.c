@@ -47,20 +47,32 @@ void cd_builtin(char *arg)
  */
 void env_builtin(void)
 {
-	char *env_var;
-	char *value;
-	int i = 0;
+	char **environ;
+	char *env;
+	int read;
 
-	while ((env_var = environ[i]) != NULL)
+	if (environ == NULL)
 	{
-		value = getenv(env_var);
-		if (value != NULL)
-		{
-			write(STDOUT_FILENO, env_var, strlen(env_var));
-			write(STDOUT_FILENO, "=", 1);
-			write(STDOUT_FILENO, value, strlen(value));
-			write(STDOUT_FILENO, "\n", 1);
-		}
-		i++;
+		perror("Error: Unable to retieve environment variables");
+		exit (-1);
 	}
+	for (env = environ; *env; env++)
+	{
+		if (*env == NULL)
+		{
+			continue;
+		}
+		read = write(STDOUT_FILENO, *env, strlen(*env));
+		if (read == -1)
+		{
+			perror("Error writing environment variable");
+			exit (EXIT_FAILURE);
+		}
+		if (write(STDOUT_FILENO, "\n", 1) == -1)
+		{
+			perror("Error writing new line character");
+			exit(EXIT_FAILURE);
+		}
+	}
+	exit(EXIT_SUCCESS);
 }
