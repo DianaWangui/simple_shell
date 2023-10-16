@@ -23,5 +23,6 @@ void cd_builtin(char *arg);
 
 int tokenization(char *line);
 int _pid(char *command_arguments[]);
+void env_builtin(void);
 void error_message(char *command);
 #endif /* MAIN_H */

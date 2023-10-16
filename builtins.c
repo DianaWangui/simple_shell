@@ -45,7 +45,7 @@ void cd_builtin(char *arg)
  * env_builtin - a fucntion that prints the environment
  *
  */
-void env_builtin()
+void env_builtin(void)
 {
 	char *env_var;
 	char *value;
