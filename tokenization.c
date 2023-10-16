@@ -68,7 +68,6 @@ int _pid(char *command_arguments[])
 	else if (pid == 0)
 	{
 		path_command = get_path_check(command_arguments[0]);
-		printf("This is the path");
 		if (path_command != NULL)
 		{
 			execve(path_command, command_arguments, environ);
