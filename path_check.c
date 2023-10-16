@@ -4,44 +4,30 @@
  * @command: The command to be checked in the path
  * Return: NULL
 */
-char *get_path_check(const char *command, char *const argv[])
+char *get_path_check(char *command)
 {
 	char *path = getenv("PATH");
-
-	char copy_path = strdup(pat);
-
+	char *copy_path = strdup(path);
+	char command_path[1024];
 	char *directory = strtok(copy_path, ":");
 
-	if (path == NULL)
+	while (directory != NULL)
 	{
-		perror("PATH not set");
-		exit(-1);
-	}
-	if (copy_path == NULL)
-	{
-		perror("Failed to copy path");
-		exit(-1);
-	}
-	while(directory != NULL)
-	{
-		char *whole_path = malloc(strlen(directory) + strlen(command) + 2);
-
-		if (whole_path == NULL)
+		strcpy(command_path, directory);
+		if (command_path[strlen(command_path) - 1] != '/')
 		{
-			perror("Failed to allocate memory to whole path");
-			free(copy_path);
-			exit(-1);
+			strcat(command_path, "/");
 		}
-		sprintf(whole_path, "%s/%s", directory, command);
-		printf("Whole path is, %s\n", whole_path);
-		if (access(whole_path, X_OK) == 0)
+		strcat(command_path, command);
+		if (access(command_path, F_OK) == 0 && access(command_path, X_OK) == 0)
 		{
 			free(copy_path);
-			return (whole_path);
+			return (strdup(command_path));
 		}
-		free(whole_path);
 		directory = strtok(NULL, ":");
 	}
+	/*printf('File not found');*/
 	free(copy_path);
-	return (0);
+	/* Returns the command if there was no execuatble path found */
+	return (command);
 }

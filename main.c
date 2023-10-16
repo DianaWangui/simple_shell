@@ -3,68 +3,39 @@
  * main - The main function to read user input
  * Return: 0 on success
  */
-int main(__attribute__((unused)) int argc, char *argv[])
+int main(void)
 {
 	int char_read;
 
 	size_t len = 0;
 
-	char *line = NULL;
+	char *line = malloc(1024);
 
-	char *delimiter = " ";
-
-	char *input_command;
-
-	write(1, "Simple_shell$ ", 14);
-
-	char_read = getline(&line, &len, stdin);
-	if (char_read == -1)
+	while (1)
 	{
-		perror("Error handling input");
-		exit(-1);
-	}
-	else
-	{
-		input_command = strtok(line, delimiter);
-
-		while(input_command != NULL)
+		write(1, "MyShell$ ", 10);
+		char_read = getline(&line, &len, stdin);
+		if (char_read == -1)
 		{
-			/*First handle the inbuilt command internally */
-
-			/* if not we initialize new process to handle the path */
-			pid_t child_pid = fork();
-
-			if (child_pid == -1)
+			if (feof(stdin))
 			{
-				perror("fork failed");
+				exit_builtin();
+			}
+			else
+			{
+				perror("Error reading input\n");
+				free(line);
 				exit(-1);
 			}
-			else if (child_pid == 0) /* child process */
-			{
-				char *path = get_path_check(input_command, argv); /* call the path function */
-				if (path == NULL)
-				{
-					perror("command not found");
-					exit(1);
-				}
-				printf("The path is %s\n", path);
-				execve(path, argv, __environ);
-				perror("failed to execute command");
-				exit(EXIT_FAILURE);
-			}
-			else if (child_pid > 0)
-			{
-				int status;
-
-				waitpid(child_pid, &status, 0);
-				if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
-				{
-					printf("Child process %d exited with status %d\n", child_pid, WEXITSTATUS(status));
-				}
-			}
-			input_command = strtok(NULL, delimiter);
 		}
-		write(1, "Simple_shell$ ", 14);
+		else if (char_read == 1)
+		{
+			continue;
+		}
+		else
+		{
+			tokenization(line);
+		}
 	}
 	free(line);
 	return (0);
