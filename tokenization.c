@@ -34,6 +34,10 @@ int tokenization(char *line)
 		/* Call the exit builtin function */
 		exit_builtin();
 	}
+	else if (strcmp(command_arguments[0], "env") == 0)
+	{
+		env_builtin();
+	}
 	else
 	{
 		_pid(command_arguments);

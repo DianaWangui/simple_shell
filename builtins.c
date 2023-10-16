@@ -41,3 +41,18 @@ void cd_builtin(char *arg)
 		}
 	}
 }
+/**
+ * env_builtin - a fucntion that prints the environment
+ *
+ */
+void env_builtin()
+{
+	char **environ;
+	char **env;
+
+	for (env = environ; *env; env++)
+	{
+		write(STDOUT_FILENO, *env, strlen(*env));
+		write(STDOUT_FILENO, "\n", 1);
+	}
+}
