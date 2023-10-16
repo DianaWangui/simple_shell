@@ -56,7 +56,7 @@ void env_builtin()
 		value = getenv(env_var);
 		if (value != NULL)
 		{
-			write(STDOUT_FILENO, env_var, strlen(env_vzr));
+			write(STDOUT_FILENO, env_var, strlen(env_var));
 			write(STDOUT_FILENO, "=", 1);
 			write(STDOUT_FILENO, value, strlen(value));
 			write(STDOUT_FILENO, "\n", 1);
