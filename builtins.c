@@ -47,12 +47,20 @@ void cd_builtin(char *arg)
  */
 void env_builtin()
 {
-	char **environ;
-	char **env;
+	char *env_var;
+	char *value;
+	int i = 0;
 
-	for (env = environ; *env; env++)
+	while ((env_var = environ[i]) != NULL)
 	{
-		write(STDOUT_FILENO, *env, strlen(*env));
-		write(STDOUT_FILENO, "\n", 1);
+		value = getenv(env_var);
+		if (value != NULL)
+		{
+			write(STDOUT_FILENO, env_var, strlen(env_vzr));
+			write(STDOUT_FILENO, "=", 1);
+			write(STDOUT_FILENO, value, strlen(value));
+			write(STDOUT_FILENO, "\n", 1);
+		}
+		i++;
 	}
 }
