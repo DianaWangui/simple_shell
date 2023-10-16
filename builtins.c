@@ -59,7 +59,7 @@ void env_builtin(void)
 		if (value != NULL)
 		{
 			len = value - var;
-			if (write(STDOUT_FILENO, var, len) == -1 || write(STDOUT_FILENO, "\n", 1) == -1)
+			if (write(STDOUT_FILENO, environ[i], strlen(environ[i])) == -1 || write(STDOUT_FILENO, "\n", 1) == -1)
 			{
 				perror("Error reading environment variable");
 				exit(EXIT_FAILURE);
