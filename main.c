@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * main - The main function to read use input
+ * main - The main function to read user input
  * Return: 0 on success
  */
 int main(void)
