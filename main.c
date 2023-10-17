@@ -42,7 +42,7 @@ int main(void)
 			if (is_interactive)
 			{
 				write(1, "command: ", 9);
-				write(1, lone, char_read);
+				write(1, line, char_read);
 			}
 			tokenization(line);
 		}
