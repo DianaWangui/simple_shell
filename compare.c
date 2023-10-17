@@ -3,7 +3,7 @@
  * stringmp - compares two str
  * @string1: first str
  * @string2: second str
- * return: function pointer
+ * Return: function pointer
  */
 int stringmp(const char *string1, const char *string2)
 {

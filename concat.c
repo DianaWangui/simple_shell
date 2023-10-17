@@ -3,7 +3,7 @@
  * stringcat - concatenator
  * @destination: string
  * @sourc: string
- * return: (0) succcess / destination
+ * Return: (0) succcess / destination
  */
 char *stringcat(char *destination, char *sourc)
 {
