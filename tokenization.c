@@ -27,12 +27,6 @@ int tokenization(char *line)
 	{
 		perror("Not a command\n");
 	}
-	else
-	{
-		for (i = 0; i < _index; i++)
-		{
-			printf("command %d is %s\n", i, command_arguments[i]);
-		}
 	command_arguments[_index] = NULL;
 	/*Checking if command is builtin command */
 	if (strcmp(command_arguments[0], "cd") == 0)
