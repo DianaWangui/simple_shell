@@ -9,7 +9,7 @@ int tokenization(char *line)
 	char *token;
 	/* char *line = NULL;*/
 
-	char *delimiters = " \n";
+	char *delimiters = " \n\t\r";
 
 	char *command_arguments[1024];
 
@@ -52,7 +52,6 @@ int tokenization(char *line)
  */
 int _pid(char *command_arguments[])
 {
-	/*char *command_arguments[1024];*/
 
 	char *line = NULL;
 

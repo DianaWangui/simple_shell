@@ -9,7 +9,7 @@ int main(void)
 
 	size_t len = 0;
 
-	char *line = malloc(1024);
+	char *line = NULL;
 
 	int is_interactive = isatty(STDIN_FILENO);
 
@@ -40,9 +40,7 @@ int main(void)
 		else
 		{
 			tokenization(line);
-			free(line);
 		}
-		line = malloc(1024);
 	}
 	free(line);
 	return (0);
