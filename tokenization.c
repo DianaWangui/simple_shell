@@ -19,15 +19,15 @@ int tokenization(char *line)
 		_index++;
 	}
 	command_arguments[_index] = NULL;
-	if (strcmp(command_arguments[0], "cd") == 0)
+	if (stringmp(command_arguments[0], "cd") == 0)
 	{
 		cd_builtin(command_arguments[1]);
 	}
-	else if (strcmp(command_arguments[0], "exit") == 0)
+	else if (stringmp(command_arguments[0], "exit") == 0)
 	{
 		exit_builtin();
 	}
-	else if (strcmp(command_arguments[0], "env") == 0)
+	else if (stringmp(command_arguments[0], "env") == 0)
 	{
 		env_builtin();
 	}
