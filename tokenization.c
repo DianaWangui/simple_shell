@@ -9,7 +9,7 @@ int tokenization(char *line)
 	char *token;
 	/* char *line = NULL;*/
 
-	char *delimiters = " \n\t\r";
+	char *delimiters = " \a\n\t\r";
 
 	char *command_arguments[1024];
 
@@ -22,7 +22,12 @@ int tokenization(char *line)
 		token = strtok(NULL, delimiters);
 		_index++;
 	}
+	printf("command %d is %s\n", _index, command_arguments[_index]);
 	command_arguments[_index] = NULL;
+	if (_index == 0)
+	{
+		printf("Not a command");
+	}
 	/*Checking if command is builtin command */
 	if (strcmp(command_arguments[0], "cd") == 0)
 	{
