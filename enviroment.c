@@ -5,22 +5,11 @@
  */
 void env_builtin(void)
 {
-	char *var;
-	char *value;
 	int i;
 
-	for (i = 0; environ[i] != NULL; i++)
+	for (i = 0; environ[i]; i++)
 	{
-		var = environ[i];
-		value = strchr(var, '=');
-		if (value != NULL)
-		{
-			if (write(STDOUT_FILENO, environ[i], strlen(environ[i])) == -1)
-			{
-				perror("Error reading environment variable");
-				exit(EXIT_FAILURE);
-			}
-		}
+		write(1, environ[i], strlen(environ[i]));
+		write(1, "\n", 1);
 	}
-	exit(EXIT_SUCCESS);
 }
