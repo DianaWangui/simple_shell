@@ -8,9 +8,9 @@ size_t stringlength(const char *string)
 {
 	size_t length = 0;
 
-	while (str[length] != '\0')
+	while (string[length] != '\0')
 	{
-		lenght++;
+		length++;
 	}
 	return (length);
 }

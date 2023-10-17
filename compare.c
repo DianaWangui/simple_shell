@@ -7,7 +7,7 @@
  */
 int stringmp(const char *string1, const char *string2)
 {
-	while (*str1 != '\0' && *str1 == *str2)
+	while (*string1 != '\0' && *string1 == *string2)
 	{
 		string1++;
 		string2++;

@@ -18,7 +18,7 @@ char *get_path_check(char *command)
 	while (directory != NULL)
 	{
 		strcpy(command_path, directory);
-		if (command_path[strlen(command_path) - 1] != '/')
+		if (command_path[stringlength(command_path) - 1] != '/')
 		{
 			strcat(command_path, "/");
 		}
