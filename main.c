@@ -11,9 +11,14 @@ int main(void)
 
 	char *line = malloc(1024);
 
+	int is_interactive = isatty(STDIN_FILENO);
+
 	while (1)
 	{
-		write(1, "$ ", 2);
+		if (is_interactive)
+		{
+			write(1, "$ ", 2);
+		}
 		char_read = getline(&line, &len, stdin);
 		if (char_read == -1)
 		{
