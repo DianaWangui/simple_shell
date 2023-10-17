@@ -10,7 +10,10 @@ char *get_path_check(char *command)
 	char *copy_path = strdup(path);
 	char command_path[1024];
 	char *directory = strtok(copy_path, ":");
-
+	if (copy_path == NULL)
+	{	perror("Failed");
+		return (NULL);
+	}
 	while (directory != NULL)
 	{
 		strcpy(command_path, directory);
