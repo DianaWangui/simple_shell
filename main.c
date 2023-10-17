@@ -13,7 +13,7 @@ int main(void)
 
 	while (1)
 	{
-		write(1, "MyShell$ ", 10);
+		write(1, "$", 10);
 		char_read = getline(&line, &len, stdin);
 		if (char_read == -1)
 		{
