@@ -42,7 +42,6 @@ int main(void)
 			tokenization(line);
 			free(line);
 		}
-		line = malloc(1024);
 	}
 	free(line);
 	return (0);
