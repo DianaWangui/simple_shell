@@ -14,6 +14,7 @@ int tokenization(char *line)
 	char *command_arguments[1024];
 
 	int _index = 0;
+	int i;
 	/* Tokenizing our string input */
 	token = strtok(line, delimiters);
 	while (token != NULL)
@@ -22,12 +23,17 @@ int tokenization(char *line)
 		token = strtok(NULL, delimiters);
 		_index++;
 	}
-	printf("command %d is %s\n", _index, command_arguments[_index]);
-	command_arguments[_index] = NULL;
 	if (_index == 0)
 	{
-		printf("Not a command");
+		perror("Not a command\n");
 	}
+	else
+	{
+		for (i = 0; i < _index; i++)
+		{
+			printf("command %d is %s\n", i, command_arguments[i]);
+		}
+	command_arguments[_index] = NULL;
 	/*Checking if command is builtin command */
 	if (strcmp(command_arguments[0], "cd") == 0)
 	{
@@ -46,6 +52,7 @@ int tokenization(char *line)
 	else
 	{
 		_pid(command_arguments);
+	}
 	}
 	/* free(line);*/
 	return (0);
