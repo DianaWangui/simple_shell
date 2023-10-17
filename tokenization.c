@@ -1,5 +1,4 @@
 #include "main.h"
-int try(void)
 /**
  * tokenization - A function that tokezes the path
  * @line: The line containing the user input
