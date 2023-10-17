@@ -29,7 +29,10 @@ int main(void)
 			else
 			{
 				perror("Error reading input\n");
-				free(line);
+				if (is_interactive)
+				{
+					free(line);
+				}
 				exit(-1);
 			}
 		}
@@ -39,14 +42,12 @@ int main(void)
 		}
 		else
 		{
-			if (is_interactive)
-			{
-				write(1, "command: ", 9);
-				write(1, line, char_read);
-			}
 			tokenization(line);
 		}
 	}
-	free(line);
+	if (is_interactive)
+	{
+		free(line);
+	}
 	return (0);
 }
