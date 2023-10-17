@@ -46,7 +46,6 @@ int tokenization(char *line)
 	{
 		_pid(command_arguments);
 	}
-	}
 	/* free(line);*/
 	return (0);
 }
