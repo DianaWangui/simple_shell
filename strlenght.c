@@ -2,7 +2,7 @@
 /**
  * stringlength - length calculator
  * @string: string
- * return: length
+ * Return: length
  */
 size_t stringlength(const char *string)
 {
