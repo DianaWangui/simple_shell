@@ -39,6 +39,11 @@ int main(void)
 		}
 		else
 		{
+			if (is_interactive)
+			{
+				write(1, "command: ", 9);
+				write(1, lone, char_read);
+			}
 			tokenization(line);
 		}
 	}
