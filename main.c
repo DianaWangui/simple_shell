@@ -6,11 +6,8 @@
 int main(void)
 {
 	int char_read;
-
 	size_t len = 0;
-
 	char *line = NULL;
-
 	int is_interactive = isatty(STDIN_FILENO);
 
 	while (1)
@@ -29,11 +26,10 @@ int main(void)
 			else
 			{
 				perror("Error reading input\n");
-				if (is_interactive)
 				{
 					free(line);
+					exit(-1);
 				}
-				exit(-1);
 			}
 		}
 		else if (char_read == 1)
@@ -45,9 +41,6 @@ int main(void)
 			tokenization(line);
 		}
 	}
-	if (is_interactive)
-	{
-		free(line);
-	}
+	free(line);
 	return (0);
 }

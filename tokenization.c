@@ -1,4 +1,5 @@
 #include "main.h"
+int try(void)
 /**
  * tokenization - A function that tokezes the path
  * @line: The line containing the user input
@@ -7,14 +8,10 @@
 int tokenization(char *line)
 {
 	char *token;
-	/* char *line = NULL;*/
-
 	char *delimiters = " \a\n\t\r";
-
 	char *command_arguments[1024];
-
 	int _index = 0;
-	/* Tokenizing our string input */
+
 	token = strtok(line, delimiters);
 	while (token != NULL)
 	{
@@ -22,20 +19,13 @@ int tokenization(char *line)
 		token = strtok(NULL, delimiters);
 		_index++;
 	}
-	if (_index == 0)
-	{
-		perror("Not a command\n");
-	}
 	command_arguments[_index] = NULL;
-	/*Checking if command is builtin command */
 	if (strcmp(command_arguments[0], "cd") == 0)
 	{
-		/* Call the builtin cd function */
 		cd_builtin(command_arguments[1]);
 	}
 	else if (strcmp(command_arguments[0], "exit") == 0)
 	{
-		/* Call the exit builtin function */
 		exit_builtin();
 	}
 	else if (strcmp(command_arguments[0], "env") == 0)
@@ -46,7 +36,6 @@ int tokenization(char *line)
 	{
 		_pid(command_arguments);
 	}
-	/* free(line);*/
 	return (0);
 }
 /**
