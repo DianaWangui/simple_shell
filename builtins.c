@@ -5,9 +5,6 @@
  */
 void exit_builtin(void)
 {
-	/* write(1, Exiting Myshell...\n\n, 18);*/
-	/* Make it sleep for 1.5 secs before exiting */
-	sleep(1.5);
 	exit(0);
 }
 /**
