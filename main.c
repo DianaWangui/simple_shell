@@ -6,7 +6,7 @@
 int main(void)
 {
 	int char_read;
-	ssize_t char_write = 0;
+	int char_write = 0;
 	size_t len = 0;
 	char *line = NULL;
 	int is_interactive = isatty(STDIN_FILENO);
