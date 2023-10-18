@@ -19,12 +19,17 @@ int tokenization(char *line)
 		_index++;
 	}
 	command_arguments[_index] = NULL;
+	if (command_arguments[0] == NULL)
+	{
+		return (0);
+	}
 	if (stringmp(command_arguments[0], "cd") == 0)
 	{
 		cd_builtin(command_arguments[1]);
 	}
 	else if (stringmp(command_arguments[0], "exit") == 0)
 	{
+		free(line);
 		exit_builtin();
 	}
 	else if (stringmp(command_arguments[0], "env") == 0)
@@ -66,9 +71,8 @@ int _pid(char *command_arguments[])
 		if (path_command != NULL)
 		{
 			execve(path_command, command_arguments, environ);
-			/* error message fucntion here */
-			error_message(command_arguments[0]);
 			free(line);
+			error_message(command_arguments[0]);
 			exit(1);
 		}
 	}

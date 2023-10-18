@@ -21,6 +21,7 @@ int main(void)
 			if (char_write == -1)
 			{
 				perror("Write error");
+				free(line);
 				exit(1);
 			}
 		}
@@ -30,15 +31,13 @@ int main(void)
 		{
 			if (feof(stdin))
 			{
+				free(line);
 				exit_builtin();
 			}
 			else
 			{
 				perror("Error reading input\n");
-				if (is_interactive)
-				{
-					free(line);
-				}
+				free(line);
 				exit(-1);
 			}
 		}
