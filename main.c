@@ -7,6 +7,7 @@ int main(void)
 {
 	int char_read;
 	int char_write = 0;
+	char *prompt = "$ ";
 	size_t len = 0;
 	char *line = NULL;
 	int is_interactive = isatty(STDIN_FILENO);
