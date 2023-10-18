@@ -16,7 +16,7 @@ int main(void)
 	{
 		if (is_interactive)
 		{
-			char_write = write(1, prompt, stringlength(prompt));
+			char_write = write(1, prompt, strlen(prompt));
 			if (char_write == -1)
 			{
 				perror("Write error");
