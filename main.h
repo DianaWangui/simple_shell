@@ -14,14 +14,15 @@ extern char *token;
 extern char *line;
 extern char *delimiters;
 extern char *command_arguments[];
-
 /* Builtin prototypees */
 void handlesignal(int signal)
 
 void exit_builtin(void);
 void cd_builtin(char *arg);
 /*other helping functions */
-
+int stringmp(const char *string1, const char *string2);
+char *stringcat(char *destination, char *sourc);
+size_t stringlength(const char *string);
 int tokenization(char *line);
 int _pid(char *command_arguments[]);
 void env_builtin(void);
