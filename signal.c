@@ -6,7 +6,7 @@ ssize_t stringlength(const char *string);
  */
 void handle_signal(int signal)
 {
-	char *prompt = "\n> ";
+	char *prompt = "\n$ ";
 
 	(void)signal;
 	write(1, prompt, stringlength(prompt));
