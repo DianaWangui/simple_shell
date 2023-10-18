@@ -1,10 +1,9 @@
 #include "main.h"
-ssize_t stringlength(const char *string);
 /**
  * handlesignal - a function to handle signals
  * @signal: the number of the signal
  */
-void handle_signal(int signal)
+void signal_handler(int signal)
 {
 	char *prompt = "\n$ ";
 
