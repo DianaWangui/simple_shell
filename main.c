@@ -51,9 +51,6 @@ int main(void)
 			tokenization(line);
 		}
 	}
-	if (is_interactive)
-	{
-		free(line);
-	}
+	free(line);
 	return (0);
 }
