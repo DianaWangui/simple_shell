@@ -16,6 +16,7 @@ extern char *delimiters;
 extern char *command_arguments[];
 
 /* Builtin prototypees */
+void handlesignal(int signal)
 
 void exit_builtin(void);
 void cd_builtin(char *arg);

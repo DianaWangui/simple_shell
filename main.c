@@ -6,19 +6,24 @@
 int main(void)
 {
 	int char_read;
-
+	ssize_t char_write = 0;
 	size_t len = 0;
-
 	char *line = NULL;
-
 	int is_interactive = isatty(STDIN_FILENO);
+	signal(SIGINT, signal_handler);
 
 	while (1)
 	{
 		if (is_interactive)
 		{
-			write(1, "$ ", 2);
+			char_write = write(1, prompt, stringlength(prompt));
+			if (char_write == -1)
+			{
+				perror("Write error");
+				exit(1);
+			}
 		}
+		fflush(stdout);
 		char_read = getline(&line, &len, stdin);
 		if (char_read == -1)
 		{
