@@ -7,6 +7,8 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <string.h>
+#define MAX_INPUT_LENGTH 100
+#define MAX_ARGUMENTS 10
 
 char *get_path_check(char *command);
 extern char **environ;
