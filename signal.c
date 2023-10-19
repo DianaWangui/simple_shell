@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * handlesignal - a function to handle signals
+ * signal_handler - a function to handle signals
  * @signal: the number of the signal
  */
 void signal_handler(int signal)
