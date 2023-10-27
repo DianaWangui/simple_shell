@@ -1,25 +1,37 @@
-#SIMPLE SHELL PROJECT
-A simple shell project given by ALX as a group project
-#Description of The Repository
--This repository contains codes that make up a shell like program used in UNIX Operating system
--This repository was a team work project that was created for the purpose of leeaning
-#Files
--This repository as of now conatins some files, each named according to its function
-- *builtins.c* file containd functions for builtin commands like *ls*  and *exit*
-- *main.c* file contains our main program that creates the shell prompt
-- *main.h* file contains all our function prototypes and the helping libraries
-- *environment.c* file contains the environment function that prints the environment variables
-- *error_msg,c* file contains the error message function printed out whenever a command failed to execute
-- *concat.c, comapare.c, strlenght.c* are functions that are similar to the builtin function, for concatenating strings, comapring strings and for string length check.
-- *path_check.c* fucntion is used to check the path of our command or the command entered by the user, if its not a builtin function
-- *tokenization.c* is a file that contains two function one that tokenizes the string token and one that creates a child process whenever a new process is called or is simple terms, a user enters a command that is not builtin, the shell then initializes a new child process to execute the command
-#Contributions
-- All the files and content in this repository are the works that we came up with for the tasks assigned by ALX for the purposes of leanring
--The contribution were done by my project partner and I
-#Contacts of the contibuters
-You can contact us via
-- Email for Diana Wangui: 
-- Github for Diana: https://github.com/DianaWangui
-- Email for Ian: 
-- Github for Diana: https://github.com/Omuganda863
+# Simple Shell Project
+
+This repository is a group project for ALX, which contains code for a shell-like program designed for UNIX operating systems.
+
+## Description
+
+The purpose of this repository is to create a simple shell-like program as part of a team project for learning.
+
+## Files
+
+The repository contains the following files, each named according to its function:
+
+- **builtins.c**: Contains functions for built-in commands such as `ls` and `exit`.
+- **main.c**: Houses the main program responsible for creating the shell prompt.
+- **main.h**: Includes function prototypes and necessary libraries.
+- **environment.c**: Holds the environment function responsible for printing environment variables.
+- **error_msg.c**: Contains the error message function that is triggered when a command fails to execute.
+- **concat.c, compare.c, strlength.c**: These files contain functions for string manipulation, including concatenating strings, comparing strings, and checking string lengths.
+- **path_check.c**: Used to verify the path of a command or user input to determine if it's a built-in function.
+- **tokenization.c**: Contains functions for tokenizing strings and creating child processes when a non-built-in command is entered. Child processes execute these commands.
+
+## Contributions
+
+All the files and content in this repository represent the collaborative work of my project partner and me. We completed the tasks assigned by ALX as part of our learning journey.
+
+## Contact Information
+
+You can reach out to us via the following contact details:
+
+- **Diana Wangui**
+  - Email: [Email for Diana]
+  - GitHub: [Diana's GitHub Profile](https://github.com/DianaWangui)
+
+- **Ian**
+  - Email: [Email for Ian]
+  - GitHub: [Ian's GitHub Profile](https://github.com/Omuganda863)
 
